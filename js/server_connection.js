@@ -13,10 +13,11 @@ async function user_psw(event) {
   document.querySelector(".message_text").style.opacity="100%";
 
   let text_status_div=  document.querySelector(".message_srv");
+  text_status_div.textContent=`Connect to a Server...`;
   text_status_div.classList.add("text_status_div");
   
   let resp_pomis = await fetch(new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_input}&password=${password_input.value}`))
-  text_status_div.innerHTML=`Connect to a Server...<button class="klick">Abbe</button>`;
+ 
   new_div.classList.remove("msg_text");
   console.log(resp_pomis)
   if (resp_pomis.status ===200) {
@@ -46,11 +47,11 @@ async function user_psw(event) {
           document.querySelector(".message_text").style.opacity="0";
           
           let new_div=  document.querySelector(".message_text");
-         /*  new_div.classList.add("msg_text"); */
+         new_div.classList.add("msg_text"); 
           let text_status_div=  document.querySelector(".message_srv");
           text_status_div.classList.add("text_status_div");
           
-         /*  new_div.classList.remove("msg_text"); */
+           new_div.classList.remove("msg_text"); 
           
           
         
@@ -59,14 +60,14 @@ async function user_psw(event) {
       if (resp_pomis.status ===418) {
           
         document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
-        document.querySelector(".message_text").style.opacity="0";
-
-        let new_div=  document.querySelector(".message_text");
-        new_div.classList.add("msg_text");
-        let text_status_div=  document.querySelector(".message_srv");
-        text_status_div.classList.add("text_status_div");
-        
-        new_div.classList.remove("msg_text");
+         document.querySelector(".message_text").style.opacity="0";
+          
+          let new_div=  document.querySelector(".message_text");
+         new_div.classList.add("msg_text"); 
+          let text_status_div=  document.querySelector(".message_srv");
+          text_status_div.classList.add("text_status_div");
+          
+           new_div.classList.remove("msg_text"); 
         
         
       }
