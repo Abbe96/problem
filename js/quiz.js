@@ -14,30 +14,34 @@ async function huhu(){
     
     document.querySelectorAll(".select").forEach(knappar => knappar.addEventListener("click",sms));
     
-
+    
     function sms(event) {
         if (event.target.textContent === git.name) {
             /* alert("RÄTT"); */
-            
-/*             document.querySelectorAll(".select").forEach(knappar => knappar.removeEventListener("click",sms));
- */            document.querySelector(".answer").classList.remove("answer");
+            document.querySelectorAll(".select").forEach(knappar => knappar.removeEventListener("click",sms));
+            document.querySelector(".answer").classList.remove("answer");
             let button_refresh = document.createElement("button");
             button_refresh.textContent="ok";
             document.querySelector(".message_text").appendChild(button_refresh);
-/*             button_refresh.addEventListener("click",huhu());
- */            button_refresh.style.width="50px";
+            button_refresh.addEventListener("click",huhu());
+            button_refresh.style.width="50px";
             button_refresh.style.height="50px";
+            
             /* huhu(); */
         } else {
             /* alert("FELLLLLLLL"); */
             let button_refresh = document.createElement("button");
             button_refresh.textContent="ok";
             document.querySelector(".message_text").appendChild(button_refresh);
-/*             button_refresh.addEventListener("click",huhu());
- */            document.querySelector(".answer").classList.remove("answer");
-/*             document.querySelectorAll(".select").forEach(knappar => knappar.removeEventListener("click",sms))
- */            /* huhu(); */
+            button_refresh.addEventListener("click",huhu());
+            document.querySelector(".answer").classList.remove("answer");
+            document.querySelectorAll(".select").forEach(knappar => knappar.removeEventListener("click",sms))
+            /* huhu(); */
         }
     }
 }
 huhu()
+document.querySelector(".logut").addEventListener("click", reload);
+function reload() {
+    location.reload();
+};
