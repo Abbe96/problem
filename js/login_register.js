@@ -23,6 +23,11 @@ function log_reg(event) {
     }
 }
 
-function bytCss(event) {
+
+
+
+
+/* ändra sida funktion */
+  function bytCss(event) {
     document.querySelector("#css").innerHTML = `<link rel="stylesheet" href="../css/quiz.css">`
-}
+ }
