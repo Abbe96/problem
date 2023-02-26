@@ -11,30 +11,30 @@ async function user_psw(event) {
   let new_div=  document.querySelector(".message_text");
   new_div.classList.add("msg_text");
   
+  let text_status_div=  document.querySelector(".message_srv");
+  text_status_div.classList.add("text_status_div");
   
   let resp_pomis = await fetch(new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_input}&password=${password_input.value}`))
+  text_status_div.innerHTML=`Connect to a Server...<button class="klick">Abbe</button>`;
   new_div.classList.remove("msg_text");
   console.log(resp_pomis)
   if (resp_pomis.status ===200) {
-    
-        let text_status_div=  document.querySelector(".message_srv");
-        text_status_div.classList.add("text_status_div");
-        text_status_div.textContent="conectening"  
+      text_status_div.style.display=`none`;
     bytCss();
-    }/*  else {
-        console.log("hej");
-    } */
+    }
+
     if (resp_pomis.status ===404) {
-        /* alert("feeeeelllll") */
+        text_status_div.style.display=`none`;
+
         let new_div=  document.querySelector(".message_text");
         new_div.classList.add("msg_text");
         let text_status_div=  document.querySelector(".message_srv");
         text_status_div.classList.add("text_status_div");
-        text_status_div.textContent="Conactin"
+        
         document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
 
         new_div.classList.remove("msg_text");
-
+        
        
        /*  let button_refresh = document.createElement("button");
             button_refresh.textContent="ok";
@@ -50,7 +50,8 @@ async function user_psw(event) {
       } */                             /* s 418 (I’m not a teapo */
       if (resp_pomis.status ===400) {
         /* alert("osjcfashfiahfsu") */
-        
+        text_status_div.style.display=`none`;
+
         let new_div=  document.querySelector(".message_text");
         new_div.classList.add("msg_text");
         let text_status_div=  document.querySelector(".message_srv");
@@ -76,7 +77,7 @@ async function user_psw(event) {
 
 
 if (event.target.textContent === "Register") {
-
+   
     try {
         let user_reg = {
             action: "register", user_name: user_input, password: password_input.value
