@@ -13,7 +13,7 @@ async function user_psw(event) {
   document.querySelector(".message_text").style.opacity="100%";
 
   let text_status_div=  document.querySelector(".message_srv");
-  text_status_div.textContent=`Connect to a Server...`;
+  text_status_div.textContent=`Connect to Server...`;
   text_status_div.classList.add("text_status_div");
   
   let resp_pomis = await fetch(new Request(`https://www.teaching.maumt.se/apis/access/?action=check_credentials&user_name=${user_input}&password=${password_input.value}`))
@@ -40,10 +40,10 @@ async function user_psw(event) {
         
        
        
-      }                             /* s 418 (I’m not a teapo */
+      }                             
       if (resp_pomis.status ===400) {
         
-          document.querySelector(".text_magic").textContent="input user name or passwoed.";
+          document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
           document.querySelector(".message_text").style.opacity="0";
           
           let new_div=  document.querySelector(".message_text");
