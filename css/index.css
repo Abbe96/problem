@@ -1,28 +1,28 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(23, 64, 139,0.5);
-    
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(23, 64, 139,0.5);
 
-  .msg_text{
-    background-color: rgb(255, 255, 255,0.5);
-    color: black;
-    
-    width: 337px;
-    height: 666px;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
+}
 
-  .text_status_div{
-    border: 2px solid black;
-    padding: 20px;
-    background-color: brown;
-    color: white;
-    border-radius: 5px;
-    font-size: large;
-  }
+.msg_text{
+  background-color: rgb(255, 255, 255,0.5);
+  color: black;
+
+  width: 337px;
+  height: 666px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.text_status_div{
+  border: 2px solid black;
+  padding: 20px;
+  background-color: brown;
+  color: white;
+  border-radius: 5px;
+  font-size: large;
+}
