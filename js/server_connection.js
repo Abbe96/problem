@@ -10,7 +10,8 @@ document.querySelector(".login").addEventListener("click",user_psw);
 async function user_psw(event) {
   let new_div=  document.querySelector(".message_text");
   new_div.classList.add("msg_text");
-  
+  document.querySelector(".message_text").style.opacity="100%";
+
   let text_status_div=  document.querySelector(".message_srv");
   text_status_div.classList.add("text_status_div");
   
@@ -19,59 +20,56 @@ async function user_psw(event) {
   new_div.classList.remove("msg_text");
   console.log(resp_pomis)
   if (resp_pomis.status ===200) {
-      text_status_div.style.display=`none`;
+    document.querySelector(".message_text").style.opacity="0";
+
     bytCss();
     }
 
     if (resp_pomis.status ===404) {
-        text_status_div.style.display=`none`;
+        document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
 
         let new_div=  document.querySelector(".message_text");
         new_div.classList.add("msg_text");
         let text_status_div=  document.querySelector(".message_srv");
         text_status_div.classList.add("text_status_div");
-        
-        document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
+        document.querySelector(".message_text").style.opacity="0";
+
 
         new_div.classList.remove("msg_text");
         
        
-       /*  let button_refresh = document.createElement("button");
-            button_refresh.textContent="ok";
-            document.querySelector(".text_status_div").appendChild(button_refresh);
-            button_refresh.addEventListener("click", function() {
-                location.reload();
-                });
-            button_refresh.style.width="50px";
-            button_refresh.style.height="50px"; 
-             */
-      }/*  else {
-          console.log("hej");
-      } */                             /* s 418 (I’m not a teapo */
+       
+      }                             /* s 418 (I’m not a teapo */
       if (resp_pomis.status ===400) {
-        /* alert("osjcfashfiahfsu") */
-        text_status_div.style.display=`none`;
+        
+          document.querySelector(".text_magic").textContent="input user name or passwoed.";
+          document.querySelector(".message_text").style.opacity="0";
+          
+          let new_div=  document.querySelector(".message_text");
+         /*  new_div.classList.add("msg_text"); */
+          let text_status_div=  document.querySelector(".message_srv");
+          text_status_div.classList.add("text_status_div");
+          
+         /*  new_div.classList.remove("msg_text"); */
+          
+          
+        
+        
+      }
+      if (resp_pomis.status ===418) {
+          
+        document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
+        document.querySelector(".message_text").style.opacity="0";
 
         let new_div=  document.querySelector(".message_text");
         new_div.classList.add("msg_text");
         let text_status_div=  document.querySelector(".message_srv");
         text_status_div.classList.add("text_status_div");
         
-        document.querySelector(".text_magic").textContent="Wrong user name or passwoed.";
         new_div.classList.remove("msg_text");
         
-        /* let button_refresh = document.createElement("button");
-            button_refresh.textContent="ok";
-            document.querySelector(".text_status_div").appendChild(button_refresh);
-            button_refresh.addEventListener("click", function() {
-                location.reload();
-            });
-            button_refresh.style.width="50px";
-            button_refresh.style.height="50px"; */
-      }/*  else {
-          console.log("hej");
-      } */
-    // console.log(resource);
+        
+      }
     document.querySelector("#logged_user").textContent= user_input;
 
 
